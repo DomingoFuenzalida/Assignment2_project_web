@@ -24,14 +24,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_30_202057) do
 
   create_table "cards", force: :cascade do |t|
     t.string "card_name", null: false
-    t.bigint "list_id"
-    t.string "card_title", null: false
+    t.bigint "state_id"
     t.string "card_description", null: false
     t.bigint "user_informer_id", null: false
     t.bigint "user_assignee_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["list_id"], name: "index_cards_on_list_id"
+    t.index ["state_id"], name: "index_cards_on_state_id"
     t.index ["user_assignee_id"], name: "index_cards_on_user_assignee_id"
     t.index ["user_informer_id"], name: "index_cards_on_user_informer_id"
   end
